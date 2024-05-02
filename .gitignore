@@ -1,0 +1,10 @@
+# Exclude directories
+*/
+!samples/
+
+# Exclude the file types
+*.csv
+*.pkl
+
+# Exclude the following notebooks
+company_search_using_prompt.ipynb

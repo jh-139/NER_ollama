@@ -55,7 +55,7 @@ def clean_transcript_text(text):
     text = text.replace("\n",' ')
     return text
 
-def process_response_1_llama3(text):
+def process_response_1(text):
     text = text.replace("**", "")
     texts = text.split("\n")
     texts = [text for text in texts if not ' none' in text.lower()]
@@ -100,7 +100,7 @@ if __name__ == '__main__':
         # extract company names from the llm's response
         df_new_batch = pd.DataFrame()
         for vid_id, messages, result in zip(vid_ids, tasks_args, results):
-            company_names_found = process_response_1_llama3(result)
+            company_names_found = process_response_1(result)
             print(company_names_found)
             df_new = pd.DataFrame(zip([vid_id] * len(company_names_found), company_names_found), columns=['vid_id', result_col_name])
             df_new_batch = pd.concat([df_new_batch, df_new], axis=0)

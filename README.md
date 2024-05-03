@@ -1,10 +1,10 @@
 # Named Entity Recognition (NER) using Large language models (LLMs)
 
 ## Using LLM to get the model to perform NER task
-This project showcases how with prompt engineering and selecting the correct LLM model, use LLMfor NER task, as compared to using the conventional approach of using neural networks.
+This project attempts to make use of LLMs to perform NER task, instead of the conventional approach of using neural networks.
 
 First ask a prompt to the LLM, providing the text in the prompt for the LLM to analyse.
-Next, use regular expression to extract the company names, which may come in various variants. Examples: '1. Apple', '-Apple',  '*Apple' . 
+Next, use regular expression to extract the company names. Reponse of LLMs may come in various forms. Examples: '1. Apple', '-Apple',  '*Apple' . 
 For each of the company name identified by the LLM, use semantic search match the name with the list of company names in our sample.
 
 ## Textual Data source
@@ -18,4 +18,5 @@ For each of the company name identified by the LLM, use semantic search match th
 
 ## Tweak this project for your own uses
 
-Sample codes are provided in 'samples' .
+- Sample codes are provided in 'samples' .
+

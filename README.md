@@ -25,3 +25,4 @@ For each of the company name identified by the LLM, use semantic search match th
 
 - Terms "FANG companies", "Big Oil", "Big Pharma" are not identified by the language models, though this can be circumvented by prompt engineering and by compiling a list of all such terms.
 - The semantic search step caused quite a few false positive cases. Perhaps this would require fine-tuning a dedicated embedding, cross encoder model for the task of disambiguating the entities.
+- Involve LLM on the semantic search, i.e use the semantic search to retrieve top k similar companies and ask the LLM to decide which one is a better match.

@@ -7,13 +7,15 @@ import os
 
 batch_size = 10
 model = 'gemma'  #model = "llama2:13b" # 'llama2'
+youtube_handler = "CNBCtelevision"
+
 
 # input sources
-df = pd.read_csv(r"E:\youtube_data\channel_scraper\wsj_DB.csv")
-transcripts_dir = r"E:\youtube_data\channel_scraper\wsj\transcripts"
+df = pd.read_csv(rf"E:\youtube_data\channel_scraper\{youtube_handler}_DB.csv")
+transcripts_dir = rf"E:\youtube_data\channel_scraper\{youtube_handler}\transcripts"
 
 # output sources
-main_dir = "wsj"
+main_dir = youtube_handler
 ner_dir = "gemma" 
 result_col_name = f"company_found_{ner_dir}"
 
@@ -101,7 +103,7 @@ if __name__ == '__main__':
         df_new_batch = pd.DataFrame()
         for vid_id, messages, result in zip(vid_ids, tasks_args, results):
             company_names_found = process_response_1(result)
-            print(company_names_found)
+            print(f"{vid_id}: {company_names_found}")
             df_new = pd.DataFrame(zip([vid_id] * len(company_names_found), company_names_found), columns=['vid_id', result_col_name])
             df_new_batch = pd.concat([df_new_batch, df_new], axis=0)
 

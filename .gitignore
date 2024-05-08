@@ -1,6 +1,7 @@
 # Exclude directories
 */
 !samples/
+!eda/
 
 # Exclude the file types
 *.csv

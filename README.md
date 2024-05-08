@@ -19,4 +19,6 @@ For each of the company name identified by the LLM, use semantic search match th
 ## Tweak this project for your own uses
 
 - Sample codes are provided in 'samples' .
+- Exploratory Data Analysis on the NER results are in 'eda' .
+
 
